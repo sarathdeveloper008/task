@@ -1,0 +1,69 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>captcha</title>
+    <style>
+        #box{
+            background:black;
+            color:white;
+            width: 300px;
+            text-align: center;
+            
+            
+        }
+    
+    </style>
+
+
+</head>
+<body>
+
+
+    <div id="box">
+     <h1 id="Captcha">EqFtlz</h1>
+     <table style="margin-left: 35px;">
+        <tr>
+            <td> <input id="input" type="text"></td>  <td><button onclick="check()" id="btn" style="background:green; color:white;" type="submit">verify</button></td>    
+            </tr>  
+    </table>
+
+    </div>
+
+
+
+    <script>
+
+
+        function check()
+    {
+        var input = document.getElementById("input").value;
+        var captcha = document.getElementById("Captcha").textContent;
+      
+
+       
+        if(captcha==input){
+            alert("Captcha varified sucessfully");
+        }
+        else{
+            alert("Captcha varification failed please try again");}
+        
+    }
+    
+    
+    </script>
+    
+    
+    
+    
+
+
+
+    
+</body>
+</html>
+

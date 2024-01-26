@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+     
+    <style>
+        #container {
+            text-align: center; 
+        }
+
+        .container-s1, .bottom {
+            background-color: black;
+            color: white;
+            width: 300px;
+            margin-left: 40%;
+            
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <div class="container-s1">
+            <h1>Interactive Quiz</h1>
+            <form id="quizform">
+                <p>1. What is the capital of France?</p>
+                <div>
+                    <input type="radio" name="france" value="paris">Paris
+                    <input type="radio" name="france" value="london">London
+                    <input type="radio" name="france" value="berlin">Berlin
+                </div>
+
+                <p>2. What planet is known as the Red planet?</p>
+                <div>
+                    <input type="radio" name="Redplanet" value="mars">Mars
+                    <input type="radio" name="Redplanet" value="venus">Venus
+                    <input type="radio" name="Redplanet" value="jupiter">Jupiter
+                </div>
+
+                <p>3. What is the largest mammal on Earth?</p>
+                <div>
+                    <input type="radio" name="mammal" value="elephant">Elephant
+                    <input type="radio" name="mammal" value="bluewhale">Blue Whale
+                    <input type="radio" name="mammal" value="giraffe">Giraffe
+                </div>
+                
+                <input type="button" value="Submit" id="submitBtn" style="background-color: green; color: white; margin-left: 25px; margin-top: 20px;">
+            </form>
+        </div>
+
+        <div class="bottom" style="display:none;">
+            <h1>Interactive Quiz</h1>
+            <h3>Your quiz Result</h3>
+            <p id="Result"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("submitBtn").addEventListener("click", function() {
+            var quizform = document.getElementById("quizform");
+            var score = 0;
+
+            var answer1 = quizform.elements["france"].value;
+            if (answer1 == "paris") {
+                score++;
+            }
+
+            var answer2 = quizform.elements["Redplanet"].value;
+            if (answer2 == "mars") {
+                score++;
+            }
+
+            var answer3 = quizform.elements["mammal"].value;
+            if (answer3 == "bluewhale") {
+                score++;
+            }
+
+            document.getElementById("Result").textContent = "Score: " + score;
+
+            // Hide container-s1 and show the bottom
+            document.querySelector(".container-s1").style.display = "none";
+            document.querySelector(".bottom").style.display = "block";
+        });
+    </script>
+
+</body>
+</html>
